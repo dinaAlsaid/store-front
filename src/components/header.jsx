@@ -8,25 +8,7 @@ const Header = (props) => {
 
   const navItems = [
     { title: "stores", link: "/stores", onClick: () => {}, show: true },
-    { title: "blog", link: "/blog", onClick: () => {}, show: true },
-    {
-      title: "projects",
-      link: "/Projects",
-      onClick: () => {},
-      show: registerContext.loggedIn,
-    },
-    {
-      title: "pages",
-      link: "/pages",
-      onClick: () => {},
-      show: registerContext.loggedIn,
-    },
-    {
-      title: "features",
-      link: "/features",
-      onClick: () => {},
-      show: true,
-    },
+    { title: "orders", link: "/orders", onClick: () => {}, show: true },
     {
       title: "Contact",
       link: "/Contact",

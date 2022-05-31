@@ -26,7 +26,7 @@ export default function Stores() {
     <div className="d-flex flex-wrap container">
       {stores.map((store) => {
         return (
-          <Card style={{ width: "25%" }}>
+          <Card key={store.name} style={{ width: "25%" }}>
             <Card.Img variant="top" src="https://scotturb.com/wp-content/uploads/2016/11/product-placeholder.jpg" />
             <Card.Body>
               <Card.Title>{store.name}</Card.Title>
