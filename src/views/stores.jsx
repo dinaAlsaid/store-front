@@ -23,10 +23,10 @@ export default function Stores() {
   }, []); //eslint-disable-line
 
   return (
-    <>
+    <div className="d-flex flex-wrap container">
       {stores.map((store) => {
         return (
-          <Card style={{ width: "18rem" }}>
+          <Card style={{ width: "25%" }}>
             <Card.Img variant="top" src="https://scotturb.com/wp-content/uploads/2016/11/product-placeholder.jpg" />
             <Card.Body>
               <Card.Title>{store.name}</Card.Title>
@@ -36,6 +36,6 @@ export default function Stores() {
           </Card>
         );
       })}
-    </>
+    </div>
   );
 }
