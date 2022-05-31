@@ -12,7 +12,7 @@ export const Login = () => {
 
   useEffect(() => {
     if (registration.loggedIn && registration.token) {
-      navigate("/");
+      navigate("/stores");
     }
   }, [registration.loggedIn]); //eslint-disable-line
 
