@@ -11,7 +11,7 @@ export const Login = () => {
   const [isNewUser, setisNewUser] = useState(true);
 
   useEffect(() => {
-    if (registration.loggedIn) {
+    if (registration.loggedIn && registration.token) {
       navigate("/");
     }
   }, [registration.loggedIn]); //eslint-disable-line

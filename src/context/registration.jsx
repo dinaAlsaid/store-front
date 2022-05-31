@@ -4,6 +4,8 @@ import axios from "axios";
 import cookie from "react-cookies";
 
 export const RegisterContext = React.createContext();
+
+const baseURL ="http://localhost:4000"
 function RegisterProvider(props) {
   const [loggedIn, setloggedIn] = useState(false);
   const [user, setuser] = useState({});
@@ -42,10 +44,10 @@ function RegisterProvider(props) {
     try {
       const response = await axios({
         method: "post",
-        baseURL: `https://seeding-fund-dina.herokuapp.com/users/signin`,
+        baseURL: `${baseURL}/users/signin`,
         data,
         headers: {
-          authorization: `Basic ${btoa(`${data.username}:${data.password}`)}`,
+          authorization: `Basic ${btoa(`${data.username}:${data.password.toString()}`)}`,
           accept: "Accept: application/json",
         },
       });
@@ -59,7 +61,7 @@ function RegisterProvider(props) {
     try {
       const response = await axios({
         method: "post",
-        baseURL: `https://seeding-fund-dina.herokuapp.com/users/signup`,
+        baseURL: `${baseURL}/users/signup`,
         data,
       });
       validateToken(response.data.token);
