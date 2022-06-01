@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import { RegisterContext } from "../context/registration";
+import { FaStore,FaCartPlus } from "react-icons/fa";
 
+import { RegisterContext } from "../context/registration";
 const Header = (props) => {
   const registerContext = useContext(RegisterContext);
 
@@ -28,9 +29,13 @@ const Header = (props) => {
         <Navbar bg="dark" sticky="top">
           <Container>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              {registerContext.user.AccountType === "Shopper" && (
-                <Nav.Link href="" className="text-light font-weight-light">
-                  Cart
+              {registerContext.user.role === "Shopper" ? (
+                <Nav.Link href="/cart" className="text-light font-weight-light">
+                  <FaCartPlus/>
+                </Nav.Link>
+              ) : (
+                <Nav.Link href="/mystore" className="text-light font-weight-light">
+                  <FaStore />
                 </Nav.Link>
               )}
               <Nav.Link href="" className="text-light font-weight-light">
